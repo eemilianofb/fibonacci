@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+long long sf(int numero1);
+
+int main() {
+long long suma;
+int numero1;
+
+    printf("Vamos a iniciar con la serie de numeros Fibonacci\n\n");
+
+    printf("Cuantos terminos quieres en tu secuencia de numeros Fibonacci?\n\n");
+    scanf("%d", &numero1);
+
+    printf("Aqui esta tu secuencia de numeros:  ");
+
+    for (suma = 0; suma < numero1; suma++) {
+        printf("%lld ", sf(suma));
+    }
+    return 0;
+}
+
+long long sf(int numero1) {
+    if (numero1 <= 1) {
+        return numero1;
+    } else {
+        return sf(numero1 - 1) + sf(numero1 - 2);
+    }
+}
